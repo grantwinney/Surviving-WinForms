@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveModal
+namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
 {
     public partial class frmResponsiveModal : Form
     {
@@ -44,7 +44,9 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveModal
             await Task.Run(() => bmt.MakeBreakfast());
 
             btnSeparateThread.Enabled = true;
-            txtSeparateThread.AppendText("**** ALL DONE ****");
+
+            if (!txtSeparateThread.IsDisposed)
+                txtSeparateThread.AppendText("**** ALL DONE ****");
         }
 
         private async void btnMultipleThreads_Click(object sender, EventArgs e)
@@ -52,25 +54,20 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveModal
             txtMultipleThreads.Clear();
             btnMultipleThreads.Enabled = false;
 
-            var bmt = new BreakfastMultipleThreads((text) =>
+            var progress = new Progress<string>();
+            progress.ProgressChanged += (s, message) =>
             {
-                try
-                {
-                    if (txtMultipleThreads.InvokeRequired)
-                        txtMultipleThreads.Invoke((MethodInvoker)delegate { txtMultipleThreads.AppendText(text + Environment.NewLine); });
-                    else
-                        txtMultipleThreads.AppendText(text + Environment.NewLine);
-                }
-                catch (ObjectDisposedException)
-                {
-                    // You might want to at least log the exception, depending on the case.
-                }
-            });
+                if (!txtMultipleThreads.IsDisposed)
+                    txtMultipleThreads.AppendText(message + Environment.NewLine);
+            };
 
+            var bmt = new BreakfastMultipleThreads(progress);
             await Task.Run(() => bmt.MakeBreakfastAsync());
           
             btnMultipleThreads.Enabled = true;
-            txtMultipleThreads.AppendText("**** ALL DONE ****");
+
+            if (!txtMultipleThreads.IsDisposed)
+                txtMultipleThreads.AppendText("**** ALL DONE ****");
         }
     }
 }

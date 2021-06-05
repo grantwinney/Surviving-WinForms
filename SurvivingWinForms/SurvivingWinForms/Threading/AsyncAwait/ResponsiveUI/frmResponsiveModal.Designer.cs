@@ -1,5 +1,5 @@
 ﻿
-namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveModal
+namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
 {
     partial class frmResponsiveModal
     {

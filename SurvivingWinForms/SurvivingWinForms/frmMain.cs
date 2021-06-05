@@ -1,6 +1,6 @@
-﻿using SurvivingWinForms.Threading.AsyncAwait.ResponsiveModal;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI;
 
 namespace SurvivingWinForms
 {

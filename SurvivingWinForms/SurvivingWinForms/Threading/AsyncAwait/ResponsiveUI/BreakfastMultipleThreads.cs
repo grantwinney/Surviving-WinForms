@@ -3,16 +3,16 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveModal
+namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
 {
     public class BreakfastMultipleThreads
     {
         private readonly Stopwatch stopwatch = new Stopwatch();
-        private readonly Action<object> write;
+        private readonly IProgress<string> progress;
 
-        public BreakfastMultipleThreads(Action<object> write)
+        public BreakfastMultipleThreads(IProgress<string> progress)
         {
-            this.write = write;
+            this.progress = progress;
         }
 
         public async Task MakeBreakfastAsync()
@@ -236,7 +236,7 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveModal
 
         private void SendMessage(string text)
         {
-            write($"[{ stopwatch.ElapsedMilliseconds }] {text}");
+            progress.Report($"[{ stopwatch.ElapsedMilliseconds }] {text}");
         }
     }
 }

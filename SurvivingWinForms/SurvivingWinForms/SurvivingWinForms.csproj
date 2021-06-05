@@ -54,12 +54,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Threading\AsyncAwait\ResponsiveModal\BreakfastMultipleThreads.cs" />
-    <Compile Include="Threading\AsyncAwait\ResponsiveModal\BreakfastSingleThread.cs" />
-    <Compile Include="Threading\AsyncAwait\ResponsiveModal\frmResponsiveModal.cs">
+    <Compile Include="Threading\AsyncAwait\ResponsiveUI\BreakfastMultipleThreads.cs" />
+    <Compile Include="Threading\AsyncAwait\ResponsiveUI\BreakfastSingleThread.cs" />
+    <Compile Include="Threading\AsyncAwait\ResponsiveUI\frmResponsiveModal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Threading\AsyncAwait\ResponsiveModal\frmResponsiveModal.Designer.cs">
+    <Compile Include="Threading\AsyncAwait\ResponsiveUI\frmResponsiveModal.Designer.cs">
       <DependentUpon>frmResponsiveModal.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmMain.resx">
@@ -74,7 +74,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Threading\AsyncAwait\ResponsiveModal\frmResponsiveModal.resx">
+    <EmbeddedResource Include="Threading\AsyncAwait\ResponsiveUI\frmResponsiveModal.resx">
       <DependentUpon>frmResponsiveModal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

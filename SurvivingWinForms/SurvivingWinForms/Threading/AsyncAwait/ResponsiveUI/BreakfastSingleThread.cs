@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Threading;
 
-namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveModal
+namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
 {
     public class BreakfastSingleThread
     {
