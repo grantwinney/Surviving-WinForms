@@ -32,7 +32,7 @@ namespace SurvivingWinForms
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsThreadingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asyncAwaitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.responsiveModalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.responsiveUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,26 +58,26 @@ namespace SurvivingWinForms
             // asyncAwaitToolStripMenuItem
             // 
             this.asyncAwaitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.responsiveModalToolStripMenuItem});
+            this.responsiveUIToolStripMenuItem});
             this.asyncAwaitToolStripMenuItem.Name = "asyncAwaitToolStripMenuItem";
             this.asyncAwaitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.asyncAwaitToolStripMenuItem.Text = "Async / Await";
             // 
             // responsiveModalToolStripMenuItem
             // 
-            this.responsiveModalToolStripMenuItem.Name = "responsiveModalToolStripMenuItem";
-            this.responsiveModalToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.responsiveModalToolStripMenuItem.Text = "Responsive Modal";
-            this.responsiveModalToolStripMenuItem.Click += new System.EventHandler(this.responsiveModalToolStripMenuItem_Click);
+            this.responsiveUIToolStripMenuItem.Name = "responsiveUIToolStripMenuItem";
+            this.responsiveUIToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.responsiveUIToolStripMenuItem.Text = "Responsive UI";
+            this.responsiveUIToolStripMenuItem.Click += new System.EventHandler(this.responsiveUIToolStripMenuItem_Click);
             // 
-            // Form1
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "frmMain";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -91,7 +91,7 @@ namespace SurvivingWinForms
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsThreadingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asyncAwaitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem responsiveModalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem responsiveUIToolStripMenuItem;
     }
 }
 

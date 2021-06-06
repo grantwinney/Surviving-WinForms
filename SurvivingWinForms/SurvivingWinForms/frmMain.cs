@@ -11,7 +11,7 @@ namespace SurvivingWinForms
             InitializeComponent();
         }
 
-        private void responsiveModalToolStripMenuItem_Click(object sender, EventArgs e)
+        private void responsiveUIToolStripMenuItem_Click(object sender, EventArgs e)
         {
            new frmResponsiveModal().Show();
         }
