@@ -35,6 +35,9 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
             this.txtMainThread = new System.Windows.Forms.TextBox();
             this.txtSeparateThread = new System.Windows.Forms.TextBox();
             this.txtMultipleThreads = new System.Windows.Forms.TextBox();
+            this.prgMainThread = new System.Windows.Forms.ProgressBar();
+            this.prgSeparateThread = new System.Windows.Forms.ProgressBar();
+            this.prgMultipleThreads = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // btnMainThread
@@ -71,49 +74,83 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
             // 
             this.txtMainThread.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtMainThread.Location = new System.Drawing.Point(12, 91);
+            this.txtMainThread.Location = new System.Drawing.Point(12, 111);
             this.txtMainThread.Multiline = true;
             this.txtMainThread.Name = "txtMainThread";
             this.txtMainThread.ReadOnly = true;
             this.txtMainThread.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtMainThread.Size = new System.Drawing.Size(282, 253);
+            this.txtMainThread.Size = new System.Drawing.Size(282, 233);
             this.txtMainThread.TabIndex = 3;
             // 
             // txtSeparateThread
             // 
             this.txtSeparateThread.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtSeparateThread.Location = new System.Drawing.Point(311, 91);
+            this.txtSeparateThread.Location = new System.Drawing.Point(311, 111);
             this.txtSeparateThread.Multiline = true;
             this.txtSeparateThread.Name = "txtSeparateThread";
             this.txtSeparateThread.ReadOnly = true;
             this.txtSeparateThread.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtSeparateThread.Size = new System.Drawing.Size(282, 253);
+            this.txtSeparateThread.Size = new System.Drawing.Size(282, 233);
             this.txtSeparateThread.TabIndex = 4;
             // 
             // txtMultipleThreads
             // 
             this.txtMultipleThreads.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtMultipleThreads.Location = new System.Drawing.Point(610, 91);
+            this.txtMultipleThreads.Location = new System.Drawing.Point(610, 111);
             this.txtMultipleThreads.Multiline = true;
             this.txtMultipleThreads.Name = "txtMultipleThreads";
             this.txtMultipleThreads.ReadOnly = true;
             this.txtMultipleThreads.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtMultipleThreads.Size = new System.Drawing.Size(282, 253);
+            this.txtMultipleThreads.Size = new System.Drawing.Size(282, 233);
             this.txtMultipleThreads.TabIndex = 5;
+            // 
+            // prgMainThread
+            // 
+            this.prgMainThread.Location = new System.Drawing.Point(12, 82);
+            this.prgMainThread.MarqueeAnimationSpeed = 30;
+            this.prgMainThread.Name = "prgMainThread";
+            this.prgMainThread.Size = new System.Drawing.Size(282, 23);
+            this.prgMainThread.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.prgMainThread.TabIndex = 6;
+            this.prgMainThread.Visible = false;
+            // 
+            // prgSeparateThread
+            // 
+            this.prgSeparateThread.Location = new System.Drawing.Point(311, 81);
+            this.prgSeparateThread.MarqueeAnimationSpeed = 30;
+            this.prgSeparateThread.Name = "prgSeparateThread";
+            this.prgSeparateThread.Size = new System.Drawing.Size(282, 23);
+            this.prgSeparateThread.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.prgSeparateThread.TabIndex = 7;
+            this.prgSeparateThread.Visible = false;
+            // 
+            // prgMultipleThreads
+            // 
+            this.prgMultipleThreads.Location = new System.Drawing.Point(611, 82);
+            this.prgMultipleThreads.MarqueeAnimationSpeed = 30;
+            this.prgMultipleThreads.Name = "prgMultipleThreads";
+            this.prgMultipleThreads.Size = new System.Drawing.Size(282, 23);
+            this.prgMultipleThreads.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.prgMultipleThreads.TabIndex = 8;
+            this.prgMultipleThreads.Visible = false;
             // 
             // frmResponsiveModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 358);
+            this.Controls.Add(this.prgMultipleThreads);
+            this.Controls.Add(this.prgSeparateThread);
+            this.Controls.Add(this.prgMainThread);
             this.Controls.Add(this.txtMultipleThreads);
             this.Controls.Add(this.txtSeparateThread);
             this.Controls.Add(this.txtMainThread);
             this.Controls.Add(this.btnMultipleThreads);
             this.Controls.Add(this.btnSeparateThread);
             this.Controls.Add(this.btnMainThread);
+            this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(923, 1200);
             this.MinimizeBox = false;
@@ -133,5 +170,8 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
         private System.Windows.Forms.TextBox txtMainThread;
         private System.Windows.Forms.TextBox txtSeparateThread;
         private System.Windows.Forms.TextBox txtMultipleThreads;
+        private System.Windows.Forms.ProgressBar prgMainThread;
+        private System.Windows.Forms.ProgressBar prgSeparateThread;
+        private System.Windows.Forms.ProgressBar prgMultipleThreads;
     }
 }

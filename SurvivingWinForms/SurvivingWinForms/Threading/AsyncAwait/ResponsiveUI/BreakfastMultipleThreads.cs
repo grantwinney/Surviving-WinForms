@@ -26,8 +26,8 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
                 var tasks = new[]
                 {
                     Task.Run(() => MakeCoffeeAsync()),
-                    Task.Run(() => MakeOrangeJuice()),
-                    Task.Run(() => MakeBreakfastSandwich()),
+                    Task.Run(() => MakeOrangeJuiceAsync()),
+                    Task.Run(() => MakeBreakfastSandwichAsync()),
                 };
 
                 Task.WaitAll(tasks);
@@ -44,14 +44,14 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
         {
             SendMessage("☕ Starting coffee");
 
-            await BrewCoffee();
-            await PourCoffee();
-            await AddMilkAndSugar();
+            await BrewCoffeeAsync();
+            await PourCoffeeAsync();
+            await AddMilkAndSugarAsync();
 
             SendMessage("☕ Finished coffee");
         }
 
-        private async Task BrewCoffee()
+        private async Task BrewCoffeeAsync()
         {
             await Task.Run(() =>
             {
@@ -60,7 +60,7 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
             SendMessage("☕ Coffee brewed");
         }
 
-        private async Task PourCoffee()
+        private async Task PourCoffeeAsync()
         {
             await Task.Run(() =>
             {
@@ -69,7 +69,7 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
             SendMessage("☕ Coffee poured");
         }
 
-        private async Task AddMilkAndSugar()
+        private async Task AddMilkAndSugarAsync()
         {
             await Task.Run(() =>
             {
@@ -80,7 +80,7 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
 
         /* ORANGE JUICE */
 
-        private async Task MakeOrangeJuice()
+        private async Task MakeOrangeJuiceAsync()
         {
             SendMessage("🥤 Starting orange juice");
 
@@ -107,7 +107,7 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
 
         /* SANDWICH */
 
-        private async Task MakeBreakfastSandwich()
+        private async Task MakeBreakfastSandwichAsync()
         {
             SendMessage("🥪 Starting breakfast sandwich");
 
@@ -115,15 +115,15 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
 
             var tasks = new[]
             {
-                Task.Run(() => CookBacon()),
-                Task.Run(() => CookEggs()),
-                Task.Run(() => ToastBread()),
-                Task.Run(() => RemoveCheeseFromPackage()),
+                Task.Run(() => CookBaconAsync()),
+                Task.Run(() => CookEggsAsync()),
+                Task.Run(() => ToastBreadAsync()),
+                Task.Run(() => RemoveCheeseFromPackageAsync()),
             };
             Task.WaitAll(tasks);
 
-            await AssembleSandwich();
-            await SetFoodOnPlate();
+            await AssembleSandwichAsync();
+            await SetFoodOnPlateAsync();
 
             SendMessage("🥪 Finished breakfast sandwich");
         }
@@ -134,7 +134,7 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
             SendMessage("🥪 Got food");
         }
 
-        private async Task CookBacon()
+        private async Task CookBaconAsync()
         {
             SendMessage("🥓 Started bacon");
 
@@ -159,7 +159,7 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
             SendMessage("🥓 Fried bacon");
         }
 
-        private async Task CookEggs()
+        private async Task CookEggsAsync()
         {
             SendMessage("🍳 Started eggs");
 
@@ -191,7 +191,7 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
             SendMessage("🍳 Fried eggs");
         }
 
-        private async Task ToastBread()
+        private async Task ToastBreadAsync()
         {
             await Task.Run(() =>
             {
@@ -200,7 +200,7 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
             SendMessage("🍞 Toasted bread");
         }
 
-        private async Task RemoveCheeseFromPackage()
+        private async Task RemoveCheeseFromPackageAsync()
         {
             await Task.Run(() =>
             {
@@ -209,7 +209,7 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
             SendMessage("🧀 Removed cheese from package");
         }
 
-        private async Task AssembleSandwich()
+        private async Task AssembleSandwichAsync()
         {
             await Task.Run(() =>
             {
@@ -218,7 +218,7 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
             SendMessage("🥪 Assembled sandwich");
         }
 
-        private async Task SetFoodOnPlate()
+        private async Task SetFoodOnPlateAsync()
         {
             await Task.Run(() =>
             {

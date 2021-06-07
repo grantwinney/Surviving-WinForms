@@ -14,10 +14,14 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
         private void btnMainThread_Click(object sender, EventArgs e)
         {
             txtMainThread.Clear();
+            btnMainThread.Enabled = false;
+            prgMainThread.Show();
 
             var bmt = new BreakfastSingleThread((text) => txtMainThread.AppendText(text + Environment.NewLine));
             bmt.MakeBreakfast();
-      
+
+            btnMainThread.Enabled = true;
+            prgMainThread.Hide();
             txtMainThread.AppendText("**** ALL DONE ****");
         }
 
@@ -25,6 +29,7 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
         {
             txtSeparateThread.Clear();
             btnSeparateThread.Enabled = false;
+            prgSeparateThread.Show();
 
             var bmt = new BreakfastSingleThread((text) =>
             {
@@ -44,7 +49,7 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
             await Task.Run(() => bmt.MakeBreakfast());
 
             btnSeparateThread.Enabled = true;
-
+            prgSeparateThread.Hide();
             if (!txtSeparateThread.IsDisposed)
                 txtSeparateThread.AppendText("**** ALL DONE ****");
         }
@@ -53,6 +58,7 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
         {
             txtMultipleThreads.Clear();
             btnMultipleThreads.Enabled = false;
+            prgMultipleThreads.Show();
 
             var progress = new Progress<string>();
             progress.ProgressChanged += (s, message) =>
@@ -63,9 +69,9 @@ namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
 
             var bmt = new BreakfastMultipleThreads(progress);
             await Task.Run(() => bmt.MakeBreakfastAsync());
-          
-            btnMultipleThreads.Enabled = true;
 
+            btnMultipleThreads.Enabled = true;
+            prgMultipleThreads.Hide();
             if (!txtMultipleThreads.IsDisposed)
                 txtMultipleThreads.AppendText("**** ALL DONE ****");
         }
