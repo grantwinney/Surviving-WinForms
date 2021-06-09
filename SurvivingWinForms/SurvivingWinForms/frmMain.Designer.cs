@@ -33,6 +33,9 @@ namespace SurvivingWinForms
             this.tsThreadingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asyncAwaitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.responsiveUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mVPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +43,8 @@ namespace SurvivingWinForms
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsThreadingToolStripMenuItem});
+            this.tsThreadingToolStripMenuItem,
+            this.testingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -63,12 +67,35 @@ namespace SurvivingWinForms
             this.asyncAwaitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.asyncAwaitToolStripMenuItem.Text = "Async / Await";
             // 
-            // responsiveModalToolStripMenuItem
+            // responsiveUIToolStripMenuItem
             // 
             this.responsiveUIToolStripMenuItem.Name = "responsiveUIToolStripMenuItem";
             this.responsiveUIToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.responsiveUIToolStripMenuItem.Text = "Responsive UI";
             this.responsiveUIToolStripMenuItem.Click += new System.EventHandler(this.responsiveUIToolStripMenuItem_Click);
+            // 
+            // testingToolStripMenuItem
+            // 
+            this.testingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mVPToolStripMenuItem});
+            this.testingToolStripMenuItem.Name = "testingToolStripMenuItem";
+            this.testingToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.testingToolStripMenuItem.Text = "Testing";
+            // 
+            // mVPToolStripMenuItem
+            // 
+            this.mVPToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.calculatorToolStripMenuItem});
+            this.mVPToolStripMenuItem.Name = "mVPToolStripMenuItem";
+            this.mVPToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.mVPToolStripMenuItem.Text = "MVP";
+            // 
+            // calculatorToolStripMenuItem
+            // 
+            this.calculatorToolStripMenuItem.Name = "calculatorToolStripMenuItem";
+            this.calculatorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.calculatorToolStripMenuItem.Text = "Calculator";
+            this.calculatorToolStripMenuItem.Click += new System.EventHandler(this.calculatorToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -92,6 +119,9 @@ namespace SurvivingWinForms
         private System.Windows.Forms.ToolStripMenuItem tsThreadingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asyncAwaitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem responsiveUIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mVPToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem calculatorToolStripMenuItem;
     }
 }
 
