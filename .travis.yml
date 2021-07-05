@@ -1,0 +1,9 @@
+dist: xenial
+language: csharp
+solution: SurvivingWinForms/SurvivingWinForms.sln
+mono: none
+dotnet: 4.7.2
+script:
+  - dotnet restore
+  - dotnet build
+  - dotnet test
