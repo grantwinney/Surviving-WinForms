@@ -1,7 +1,7 @@
 dist: xenial
 language: csharp
 solution: SurvivingWinForms/SurvivingWinForms.sln
-mono: none
+mono: latest
 dotnet: 5.0
 script:
   - cd SurvivingWinForms
