@@ -4,6 +4,7 @@ solution: SurvivingWinForms/SurvivingWinForms.sln
 mono: none
 dotnet: 5.0
 script:
+  - cd SurvivingWinFormsTests
   - dotnet restore
   - dotnet build
   - dotnet test
