@@ -1,3 +1,8 @@
+[![CI Build](https://github.com/grantwinney/SurvivingWinForms/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/grantwinney/SurvivingWinForms/actions/workflows/dotnet.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+![Language](https://img.shields.io/github/languages/top/grantwinney/SurvivingWinForms.svg)
+[![Twitter](https://img.shields.io/twitter/url/http/shields.io.svg)](https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Fgrantwinney%2FSurvivingWinForms&text=We%27re%20stuck%20with%20it..%20let%27s%20make%20the%20best%20of%20it.&hashtags=winforms,csharp)
+
 # Surviving WinForms
 
 Let's face it, WinForms is here to stay. Whatever new hotness comes and goes in the world of web, many developers will find themselves supporting the desktop apps of yesteryear (or yesterdecade).
