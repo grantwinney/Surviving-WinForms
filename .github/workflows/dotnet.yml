@@ -1,4 +1,4 @@
-name: .NET
+name: Run All Tests
 
 on:
   push:
