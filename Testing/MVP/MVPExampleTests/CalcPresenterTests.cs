@@ -46,7 +46,7 @@ namespace MVP.Calculator
             mockView.VerifySet(x => x.Value2 = "", Times.Once);
             mockView.VerifySet(x => x.Value3 = "", Times.Once);
             mockView.VerifySet(x => x.Total = "", Times.Once);
-            mockView.VerifySet(x => x.RunningTotal = It.IsAny<string>(), Times.Never);
+            mockView.VerifySet(x => x.RunningTotal = It.IsAny<string>(), Times.Once);
 
             mockModel.Verify(x => x.ResetTotal(), Times.Once);
         }
