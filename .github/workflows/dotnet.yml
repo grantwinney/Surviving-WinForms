@@ -10,7 +10,7 @@ jobs:
     runs-on: windows-latest
     defaults:
       run:
-        working-directory: ./SurvivingWinForms
+        working-directory: ./Testing/MVP
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
