@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
+namespace AsyncAwait
 {
     public partial class frmResponsiveModal : Form
     {

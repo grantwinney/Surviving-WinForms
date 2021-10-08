@@ -6,12 +6,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8DEAEDBE-C6D1-4578-BF8C-36DDB695EB44}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SurvivingWinForms</RootNamespace>
-    <AssemblyName>SurvivingWinForms</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>AsyncAwait</RootNamespace>
+    <AssemblyName>AsyncAwait</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,35 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Testing\MVP\Calculator\CalcForm.cs">
+    <Compile Include="BreakfastMultipleThreads.cs" />
+    <Compile Include="BreakfastSingleThread.cs" />
+    <Compile Include="frmResponsiveModal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Testing\MVP\Calculator\CalcForm.Designer.cs">
-      <DependentUpon>CalcForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Testing\MVP\Calculator\Interfaces\ICalcModel.cs" />
-    <Compile Include="Testing\MVP\Calculator\Interfaces\ICalcView.cs" />
-    <Compile Include="Testing\MVP\Calculator\Models\CalcModel.cs" />
-    <Compile Include="Testing\MVP\Calculator\Presenters\CalcPresenter.cs" />
-    <Compile Include="Threading\AsyncAwait\ResponsiveUI\BreakfastMultipleThreads.cs" />
-    <Compile Include="Threading\AsyncAwait\ResponsiveUI\BreakfastSingleThread.cs" />
-    <Compile Include="Threading\AsyncAwait\ResponsiveUI\frmResponsiveModal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Threading\AsyncAwait\ResponsiveUI\frmResponsiveModal.Designer.cs">
+    <Compile Include="frmResponsiveModal.Designer.cs">
       <DependentUpon>frmResponsiveModal.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -84,11 +66,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Testing\MVP\Calculator\CalcForm.resx">
-      <DependentUpon>CalcForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Threading\AsyncAwait\ResponsiveUI\frmResponsiveModal.resx">
+    <EmbeddedResource Include="frmResponsiveModal.resx">
       <DependentUpon>frmResponsiveModal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -104,9 +84,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Debugging\Logging\" />
-    <Folder Include="Testing\Tools\Moq\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

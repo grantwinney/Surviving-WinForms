@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SurvivingWinForms.Threading.AsyncAwait.ResponsiveUI
+namespace AsyncAwait
 {
     public class BreakfastMultipleThreads
     {

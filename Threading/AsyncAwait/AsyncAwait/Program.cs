@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SurvivingWinForms
+namespace AsyncAwait
 {
     static class Program
     {
@@ -16,7 +13,7 @@ namespace SurvivingWinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new frmResponsiveModal());
         }
     }
 }
