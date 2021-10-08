@@ -7,7 +7,7 @@ on:
 
 jobs:
 
-  build:
+  build_testing_mvp:
     runs-on: windows-latest
     defaults:
       run:
@@ -25,7 +25,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
 
-  build:
+  build_threading_asyncawait:
     runs-on: windows-latest
     defaults:
       run:
