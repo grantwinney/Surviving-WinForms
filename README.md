@@ -17,4 +17,4 @@ So to all my fellow devs that find themselves supporting the old coldness, let's
 
 ## Testing 
 
-* Using MVP to test a WinForms app ([blog post](https://grantwinney.com/its-possible-to-test-a-winforms-app-using-mvp/), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/SurvivingWinForms/SurvivingWinForms/Testing/MVP/Calculator), [unit tests](https://github.com/grantwinney/SurvivingWinForms/tree/master/SurvivingWinForms/SurvivingWinFormsTests/MVP/Calculator))
+* Using MVP to test a WinForms app ([blog post](https://grantwinney.com/its-possible-to-test-a-winforms-app-using-mvp/), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Testing/MVP/Calculator)
