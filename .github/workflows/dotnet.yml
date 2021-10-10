@@ -18,8 +18,12 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
+    - name: Add nuget.org as a source
+      run: dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+    - name: Restore dependencies
+      run: dotnet restore
     - name: Build
-      run: dotnet build
+      run: dotnet build --no-restore
 
   testing_mvp:
     runs-on: windows-latest
@@ -32,8 +36,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore
     - name: Build
-      run: dotnet build
+      run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
 
@@ -48,5 +54,7 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore
     - name: Build
-      run: dotnet build
+      run: dotnet build --no-restore
