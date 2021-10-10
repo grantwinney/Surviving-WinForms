@@ -9,6 +9,8 @@ jobs:
 
   debugging_logging_nlogutility:
     runs-on: windows-latest
+    env:
+      DisableOutOfProcTaskHost: true
     defaults:
       run:
         working-directory: ./Debugging/Logging/NLogUtility
