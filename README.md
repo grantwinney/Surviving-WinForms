@@ -1,3 +1,5 @@
+<img style="width:120px; position:absolute; right:32px" src="https://raw.githubusercontent.com/wiki/grantwinney/SurvivingWinForms/uploads/survival.jpg">
+
 [![CI Build](https://github.com/grantwinney/SurvivingWinForms/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/grantwinney/SurvivingWinForms/actions/workflows/dotnet.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ![Language](https://img.shields.io/github/languages/top/grantwinney/SurvivingWinForms.svg)
