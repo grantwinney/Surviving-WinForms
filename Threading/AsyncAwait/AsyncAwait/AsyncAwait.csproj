@@ -50,8 +50,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BreakfastMultipleThreads.cs" />
-    <Compile Include="BreakfastSingleThread.cs" />
+    <Compile Include="Breakfast.cs" />
     <Compile Include="frmResponsiveModal.cs">
       <SubType>Form</SubType>
     </Compile>
