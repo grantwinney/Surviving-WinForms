@@ -31,7 +31,7 @@ namespace AsyncAwait
             btnSeparateThread.Enabled = false;
             prgSeparateThread.Show();
 
-            var bmt = new BreakfastSingleThread((text) =>
+            var bst = new BreakfastSingleThread((text) =>
             {
                 try
                 {
@@ -46,7 +46,7 @@ namespace AsyncAwait
                 }
             });
 
-            await Task.Run(() => bmt.MakeBreakfast());
+            await Task.Run(() => bst.MakeBreakfast());
 
             btnSeparateThread.Enabled = true;
             prgSeparateThread.Hide();
@@ -74,6 +74,29 @@ namespace AsyncAwait
             prgMultipleThreads.Hide();
             if (!txtMultipleThreads.IsDisposed)
                 txtMultipleThreads.AppendText("**** ALL DONE ****");
+        }
+
+        private async void btnMultipleThreadsHeavy_Click(object sender, EventArgs e)
+        {
+            txtMultipleThreadsHeavy.Clear();
+            btnMultipleThreadsHeavy.Enabled = false;
+            prgMultipleThreadsHeavy.Show();
+
+            var progress = new Progress<string>();
+            progress.ProgressChanged += (s, message) =>
+            {
+                if (!txtMultipleThreadsHeavy.IsDisposed)
+                    txtMultipleThreadsHeavy.AppendText(message + Environment.NewLine);
+            };
+
+            var bhr = new BreakfastHeavilyDigested(progress);
+            await Task.Run(() => bhr.MakeBreakfastAsync());
+
+            btnMultipleThreadsHeavy.Enabled = true;
+            prgMultipleThreadsHeavy.Hide();
+            if (!txtMultipleThreadsHeavy.IsDisposed)
+                txtMultipleThreadsHeavy.AppendText("**** ALL DONE ****");
+
         }
     }
 }

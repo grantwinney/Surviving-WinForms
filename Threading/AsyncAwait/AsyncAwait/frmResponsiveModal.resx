@@ -117,4 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Running everything on a separate thread takes the same amount of time, but leaves the UI responsive for other tasks (like the progress bar). Check out the button click event. The only difference is we're calling bmt.MakeBreakfast() inside a Task.Run.</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>With a minimal amount of refactoring, you can see an even greater gain. Check out the MakeBreakfastAsync call in the Breakfast class. It runs several distinct pieces of work, which don't depend on one another, in separate tasks.</value>
+  </data>
 </root>

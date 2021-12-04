@@ -4,12 +4,14 @@ using System.Threading;
 using System.Threading.Tasks;
 
 namespace AsyncAwait {
-    public abstract class Breakfast {
+    public abstract class Breakfast
+    {
         protected abstract void SendMessage(string text);
 
         #region COFFEE
 
-        protected void MakeCoffee() {
+        protected void MakeCoffee()
+        {
             SendMessage("☕ Starting coffee");
 
             BrewCoffee();
@@ -19,25 +21,30 @@ namespace AsyncAwait {
             SendMessage("☕ Finished coffee");
         }
 
-        protected void BrewCoffee() {
+        protected void BrewCoffee()
+        {
             Thread.Sleep(2000);
             SendMessage("☕ Coffee brewed");
         }
 
-        protected void PourCoffee() {
+        protected void PourCoffee()
+        {
             Thread.Sleep(500);
             SendMessage("☕ Coffee poured");
         }
 
-        protected void AddMilkAndSugar() {
+        protected void AddMilkAndSugar()
+        {
             Thread.Sleep(500);
             SendMessage("☕ Coffee flavored");
         }
 
         #endregion
+
         #region ORANGE JUICE
 
-        protected void MakeOrangeJuice() {
+        protected void MakeOrangeJuice()
+        {
             SendMessage("🥤 Starting orange juice");
 
             RemoveJuiceFromFridge();
@@ -46,20 +53,24 @@ namespace AsyncAwait {
             SendMessage("🥤 Finished orange juice");
         }
 
-        protected void RemoveJuiceFromFridge() {
+        protected void RemoveJuiceFromFridge()
+        {
             Thread.Sleep(500);
             SendMessage("🥤 Got orange juice");
         }
 
-        protected void PourOrangeJuiceInCup() {
+        protected void PourOrangeJuiceInCup()
+        {
             Thread.Sleep(500);
             SendMessage("🥤 Poured orange juice");
         }
 
         #endregion
+
         #region SANDWICH
 
-        protected void MakeBreakfastSandwich() {
+        protected void MakeBreakfastSandwich()
+        {
             SendMessage("🥪 Starting breakfast sandwich");
 
             GetFoodFromFridge();
@@ -73,29 +84,34 @@ namespace AsyncAwait {
             SendMessage("🥪 Finished breakfast sandwich");
         }
 
-        protected void GetFoodFromFridge() {
+        protected void GetFoodFromFridge()
+        {
             Thread.Sleep(2000);
             SendMessage("🥪 Got food");
         }
 
-        protected void CookBacon() {
+        protected void CookBacon()
+        {
             SendMessage("🥓 Started bacon");
             PlaceBaconInPan();
             FryBacon();
             SendMessage("🥓 Finished bacon");
         }
 
-        protected void PlaceBaconInPan() {
+        protected void PlaceBaconInPan()
+        {
             Thread.Sleep(500);
             SendMessage("🥓 Placed bacon in pan");
         }
 
-        protected void FryBacon() {
+        protected void FryBacon()
+        {
             Thread.Sleep(1000);
             SendMessage("🥓 Fried bacon");
         }
 
-        protected void CookEggs() {
+        protected void CookEggs()
+        {
             SendMessage("🍳 Started eggs");
 
             CrackEggs();
@@ -105,57 +121,69 @@ namespace AsyncAwait {
             SendMessage("🍳 Finished eggs");
         }
 
-        protected void CrackEggs() {
+        protected void CrackEggs()
+        {
             Thread.Sleep(1000);
             SendMessage("🍳 Cracked eggs");
         }
 
-        protected void PlaceEggsInPan() {
+        protected void PlaceEggsInPan()
+        {
             Thread.Sleep(500);
             SendMessage("🍳 Placed eggs in pan");
         }
 
-        protected void FryEggs() {
+        protected void FryEggs()
+        {
             Thread.Sleep(2000);
             SendMessage("🍳 Fried eggs");
         }
 
-        protected void ToastBread() {
+        protected void ToastBread()
+        {
             Thread.Sleep(2000);
             SendMessage("🍞 Toasted bread");
         }
 
-        protected void RemoveCheeseFromPackage() {
+        protected void RemoveCheeseFromPackage()
+        {
             Thread.Sleep(250);
             SendMessage("🧀 Removed cheese from package");
         }
 
-        protected void AssembleSandwich() {
+        protected void AssembleSandwich()
+        {
             Thread.Sleep(2000);
             SendMessage("🥪 Assembled sandwich");
         }
 
-        protected void SetFoodOnPlate() {
+        protected void SetFoodOnPlate()
+        {
             Thread.Sleep(500);
             SendMessage("🥪 Placed sandwich on plate");
         }
 
         #endregion
+
         #region FINIS!
-        protected void NomNomTime() {
+        protected void NomNomTime()
+        {
             SendMessage("🍴 Enjoy!");
         }
         #endregion
     }
-    public class BreakfastSingleThread : Breakfast {
+    public class BreakfastSingleThread : Breakfast
+    {
         private readonly Stopwatch stopwatch = new Stopwatch();
         private readonly Action<string> write;
 
-        public BreakfastSingleThread(Action<string> write) {
+        public BreakfastSingleThread(Action<string> write)
+        {
             this.write = write;
         }
 
-        public void MakeBreakfast() {
+        public void MakeBreakfast()
+        {
             stopwatch.Start();
             SendMessage("Making breakfast");
 
@@ -167,22 +195,28 @@ namespace AsyncAwait {
             stopwatch.Stop();
         }
 
-        protected override void SendMessage(string text) {
+        protected override void SendMessage(string text)
+        {
             write($"[{ stopwatch.ElapsedMilliseconds }] {text}");
         }
     }
-    public class BreakfastMultipleThreads : Breakfast {
+
+    public class BreakfastMultipleThreads : Breakfast
+    {
         private readonly Stopwatch stopwatch = new Stopwatch();
         private readonly IProgress<string> progress;
 
-        public BreakfastMultipleThreads(IProgress<string> progress) {
+        public BreakfastMultipleThreads(IProgress<string> progress)
+        {
             this.progress = progress;
         }
 
-        public async Task MakeBreakfastAsync() {
+        public async Task MakeBreakfastAsync()
+        {
             stopwatch.Start();
 
-            await Task.Run(() => {
+            await Task.Run(() =>
+            {
                 SendMessage("Making breakfast");
 
                 var tasks = new[]
@@ -199,7 +233,9 @@ namespace AsyncAwait {
 
             stopwatch.Stop();
         }
-        protected override void SendMessage(string text) {
+
+        protected override void SendMessage(string text)
+        {
             progress.Report($"[{ stopwatch.ElapsedMilliseconds }] {text}");
         }
     }
