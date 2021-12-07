@@ -16,6 +16,7 @@ So to all my fellow devs that find themselves supporting the old coldness, let's
 ## Debugging / Logging
 
 * How to log errors in WinForms using NLog ([blog post](https://grantwinney.com/log-errors-in-winforms-with-nlog/), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Debugging/Logging/NLogUtility))
+* A dev-friendly error box with links to the docs ([blog post](https://grantwinney.com/the-helpful-exception-box/), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Debugging/Misc/MessageBoxForDevs))
 
 ## Testing 
 
