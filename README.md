@@ -28,5 +28,8 @@ So to all my fellow devs that find themselves supporting the old coldness, let's
 
 # Other Resources
 
+Other interesting and helpful links, in no particular order:
+
 * [WinForms source code for .NET Core](https://github.com/dotnet/winforms)
-* [Top WinForms open source projects on GitHub](https://awesomeopensource.com/projects/winforms) _(by stars)_
+* [Top WinForms open source projects on GitHub](https://awesomeopensource.com/projects/winforms)
+* [What's new in Windows Forms in .NET 6.0 - .NET Blog](https://devblogs.microsoft.com/dotnet/whats-new-in-windows-forms-in-net-6-0/) _(Igor Velikorossov)_
