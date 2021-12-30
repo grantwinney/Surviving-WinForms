@@ -28,7 +28,7 @@ So to all my fellow devs that find themselves supporting the old coldness, let's
 
 ## Anti-Patterns
 
-* Using nameof to avoid magic strings ([blog post](https://grantwinney.com/using-nameof-to-avoid-magic-strings), [source code]())
+* Using nameof to avoid magic strings ([blog post](https://grantwinney.com/using-nameof-to-avoid-magic-strings), [source code](https://github.com/grantwinney/Surviving-WinForms/tree/master/AntiPatterns/MagicStrings/NameOfVersusMagicStrings))
 
 # Other Resources
 
