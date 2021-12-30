@@ -26,6 +26,10 @@ So to all my fellow devs that find themselves supporting the old coldness, let's
 
 * Using Async, Await, and Task to keep the WinForms UI responsive ([blog post](https://grantwinney.com/using-async-await-and-task-to-keep-the-winforms-ui-more-responsive/), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Threading/AsyncAwait))
 
+## Anti-Patterns
+
+* Using nameof to avoid magic strings ([blog post](https://grantwinney.com/using-nameof-to-avoid-magic-strings), [source code]())
+
 # Other Resources
 
 Other interesting and helpful links, in no particular order:
