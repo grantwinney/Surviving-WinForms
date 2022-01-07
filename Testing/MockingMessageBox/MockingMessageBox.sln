@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockingMessageBox", "MockingMessageBox\MockingMessageBox.csproj", "{0FF16B52-DB18-4DE4-AB23-2834A6570E9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockingMessageBoxTests", "MockingMessageBoxTests\MockingMessageBoxTests.csproj", "{E415E686-E1EA-43A7-998F-5C2FECC4D414}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FF16B52-DB18-4DE4-AB23-2834A6570E9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF16B52-DB18-4DE4-AB23-2834A6570E9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF16B52-DB18-4DE4-AB23-2834A6570E9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF16B52-DB18-4DE4-AB23-2834A6570E9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E415E686-E1EA-43A7-998F-5C2FECC4D414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E415E686-E1EA-43A7-998F-5C2FECC4D414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E415E686-E1EA-43A7-998F-5C2FECC4D414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E415E686-E1EA-43A7-998F-5C2FECC4D414}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {433DE42A-E5B9-4289-9261-9A40A5538C16}
+	EndGlobalSection
+EndGlobal
