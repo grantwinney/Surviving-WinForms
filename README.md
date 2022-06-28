@@ -13,6 +13,10 @@ The apps work, representing thousands of hours of effort and business rules, fin
 
 So to all my fellow devs that find themselves supporting the old coldness, let's make the best of it...
 
+## Anti-Patterns
+
+* Using nameof to avoid magic strings ([blog post](https://grantwinney.com/using-nameof-to-avoid-magic-strings), [source code](https://github.com/grantwinney/Surviving-WinForms/tree/master/AntiPatterns/MagicStrings/NameOfVersusMagicStrings))
+
 ## Debugging / Logging
 
 * How to log errors in WinForms using NLog ([blog post](https://grantwinney.com/log-errors-in-winforms-with-nlog/), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Debugging/Logging/NLogUtility))
@@ -27,9 +31,9 @@ So to all my fellow devs that find themselves supporting the old coldness, let's
 
 * Using Async, Await, and Task to keep the WinForms UI responsive ([blog post](https://grantwinney.com/using-async-await-and-task-to-keep-the-winforms-ui-more-responsive/), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Threading/AsyncAwait))
 
-## Anti-Patterns
+## Web
 
-* Using nameof to avoid magic strings ([blog post](https://grantwinney.com/using-nameof-to-avoid-magic-strings), [source code](https://github.com/grantwinney/Surviving-WinForms/tree/master/AntiPatterns/MagicStrings/NameOfVersusMagicStrings))
+* Hosting a simple webpage in WinForms with CEFSharp ([blog post](https://grantwinney.com/hosting-a-simple-webpage-in-winforms-with-cefsharp), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Web/CEFSharp/BasicCefSharp))
 
 # Other Resources
 

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicCefSharp", "BasicCefSharp\BasicCefSharp.csproj", "{9D5C56C4-E5DD-4256-8A5E-8D174F9F6289}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D5C56C4-E5DD-4256-8A5E-8D174F9F6289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D5C56C4-E5DD-4256-8A5E-8D174F9F6289}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D5C56C4-E5DD-4256-8A5E-8D174F9F6289}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D5C56C4-E5DD-4256-8A5E-8D174F9F6289}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B6B47C4-5875-4AE1-85A0-81B77FB973A4}
+	EndGlobalSection
+EndGlobal
