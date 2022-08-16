@@ -33,7 +33,11 @@ So to all my fellow devs that find themselves supporting the old coldness, let's
 
 ## Web
 
-* Hosting a simple webpage in WinForms with CEFSharp ([blog post](https://grantwinney.com/hosting-a-simple-webpage-in-winforms-with-cefsharp), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Web/CEFSharp/BasicCefSharp))
+CEFSharp
+
+* Hosting a simple webpage in WinForms with CEFSharp ([blog post](https://grantwinney.com/hosting-a-simple-webpage-in-winforms-with-cefsharp), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Web/CEFSharp/BasicCefSharp)) (part 1)
+* Displaying an IIS hosted site in CEFSharp ([blog post](https://grantwinney.com/displaying-an-iis-hosted-site-in-cefsharp), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Web/CEFSharp/BasicCefSharpIIS)) (part 2)
+
 
 # Other Resources
 
