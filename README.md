@@ -13,23 +13,27 @@ The apps work, representing thousands of hours of effort and business rules, fin
 
 So to all my fellow devs that find themselves supporting the old coldness, let's make the best of it...
 
-## Anti-Patterns
+## Avoiding Anti-Patterns
 
 * Using nameof to avoid magic strings ([blog post](https://grantwinney.com/using-nameof-to-avoid-magic-strings), [source code](https://github.com/grantwinney/Surviving-WinForms/tree/master/AntiPatterns/MagicStrings/NameOfVersusMagicStrings))
 
+## Clarity / Conciseness
+
+* Using string interpolation to craft readable strings ([blog post](https://grantwinney.com/using-string-interpolation-to-craft-readable-strings), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/ClarityConciseness/StringInterpolation))
+
 ## Debugging / Logging
 
-* How to log errors in WinForms using NLog ([blog post](https://grantwinney.com/log-errors-in-winforms-with-nlog/), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Debugging/Logging/NLogUtility))
+* How to log errors in WinForms using NLog ([blog post](https://grantwinney.com/log-errors-in-winforms-with-nlog), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Debugging/Logging/NLogUtility))
 * A dev-friendly error box with links to the docs ([blog post](https://grantwinney.com/the-helpful-exception-box/), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Debugging/Misc/MessageBoxForDevs))
 
 ## Testing 
 
 * Mocking the MessageBox ([blog post](https://grantwinney.com/mocking-messagebox-in-winforms/), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Testing/MockingMessageBox))
-* Using MVP to test a WinForms app ([blog post](https://grantwinney.com/its-possible-to-test-a-winforms-app-using-mvp/), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Testing/MVP))
+* Using MVP to test a WinForms app ([blog post](https://grantwinney.com/its-possible-to-test-a-winforms-app-using-mvp), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Testing/MVP))
 
 ## Threading
 
-* Using Async, Await, and Task to keep the WinForms UI responsive ([blog post](https://grantwinney.com/using-async-await-and-task-to-keep-the-winforms-ui-more-responsive/), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Threading/AsyncAwait))
+* Using Async, Await, and Task to keep the WinForms UI responsive ([blog post](https://grantwinney.com/using-async-await-and-task-to-keep-the-winforms-ui-more-responsive), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Threading/AsyncAwait))
 
 ## Web
 
@@ -45,4 +49,4 @@ Other interesting and helpful links, in no particular order:
 
 * [WinForms source code for .NET Core](https://github.com/dotnet/winforms)
 * [Top WinForms open source projects on GitHub](https://awesomeopensource.com/projects/winforms)
-* [What's new in Windows Forms in .NET 6.0 - .NET Blog](https://devblogs.microsoft.com/dotnet/whats-new-in-windows-forms-in-net-6-0/) _(Igor Velikorossov)_
+* [What's new in Windows Forms in .NET 6.0 - .NET Blog](https://devblogs.microsoft.com/dotnet/whats-new-in-windows-forms-in-net-6-0) _(Igor Velikorossov)_
