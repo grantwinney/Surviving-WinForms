@@ -20,6 +20,7 @@ So to all my fellow devs that find themselves supporting the old coldness, let's
 ## Clarity / Conciseness
 
 * Checking for null using the null-conditional and null-coalescing operators ([blog post](https://grantwinney.com/null-conditional-and-null-coalescing-operators), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/ClarityConciseness/NullHandlingOperators))
+* Local functions in C# (aka nested methods) ([blog post](https://grantwinney.com/local-functions-in-csharp-aka-nested-methods), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/ClarityConciseness/LocalFunctions))
 * Using string interpolation to craft readable strings ([blog post](https://grantwinney.com/using-string-interpolation-to-craft-readable-strings), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/ClarityConciseness/StringInterpolation))
 
 ## Debugging / Logging
