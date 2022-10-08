@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
+/// <summary>
+/// https://grantwinney.com/null-conditional-and-null-coalescing-operators
+/// </summary>
 namespace NullHandlingOperators
 {
     public partial class Form1 : Form

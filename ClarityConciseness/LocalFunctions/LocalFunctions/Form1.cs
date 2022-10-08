@@ -4,6 +4,9 @@ using System.Linq;
 using System.Numerics;
 using System.Windows.Forms;
 
+/// <summary>
+/// https://grantwinney.com/local-functions-in-csharp-aka-nested-methods
+/// </summary>
 namespace LocalFunctions
 {
     public partial class Form1 : Form
