@@ -4,7 +4,7 @@ using System.Windows.Forms;
 /// <summary>
 /// https://grantwinney.com/using-string-interpolation-to-craft-readable-strings
 /// </summary>
-namespace StringInterpolation
+namespace StringInterpolation 
 {
     public partial class Form1 : Form
     {
