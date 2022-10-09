@@ -21,6 +21,62 @@ jobs:
   #   - name: Build
   #     run: dotnet build
 
+  ap_magicstrings:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: ./AntiPatterns/MagicStrings
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Build
+      run: dotnet build
+
+  cc_localfunctions:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: ./ClarityConciseness/LocalFunctions
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Build
+      run: dotnet build
+
+  cc_nullhandlingops:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: ./ClarityConciseness/NullHandlingOperators
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Build
+      run: dotnet build
+
+  cc_stringinterpolation:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: ./ClarityConciseness/StringInterpolation
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Build
+      run: dotnet build
+
   testing_mvp:
     runs-on: windows-latest
     defaults:
