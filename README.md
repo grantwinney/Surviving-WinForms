@@ -22,12 +22,13 @@ So to all my fellow devs that find themselves supporting the old coldness, let's
 * Checking for null using the null-conditional and null-coalescing operators ([blog post](https://grantwinney.com/null-conditional-and-null-coalescing-operators), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/ClarityConciseness/NullHandlingOperators))
 * Local functions in C# (aka nested methods) ([blog post](https://grantwinney.com/local-functions-in-csharp-aka-nested-methods), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/ClarityConciseness/LocalFunctions))
 * Named arguments in C# - pass what you want and forget the rest ([blog post](https://grantwinney.com/named-arguments-in-c-pass-what-you-want-and-forget-the-rest), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/ClarityConciseness/NamedArguments))
-* Using string interpolation to craft readable strings ([blog post](https://grantwinney.com/using-string-interpolation-to-craft-readable-strings), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/ClarityConciseness/StringInterpolation))
+* String interpolation to craft readable strings ([blog post](https://grantwinney.com/using-string-interpolation-to-craft-readable-strings), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/ClarityConciseness/StringInterpolation))
+* Tuples and deconstruction for quickly returning multiple values ([blog post](https://grantwinney.com/using-tuple-and-deconstruction-to-return-multiple-values), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/ClarityConciseness/TupleDeconstruction))
 
 ## Debugging / Logging
 
-* How to log errors in WinForms using NLog ([blog post](https://grantwinney.com/log-errors-in-winforms-with-nlog), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Debugging/Logging/NLogUtility))
 * A dev-friendly error box with links to the docs ([blog post](https://grantwinney.com/the-helpful-exception-box/), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Debugging/Misc/MessageBoxForDevs))
+* Logging errors in WinForms using NLog ([blog post](https://grantwinney.com/log-errors-in-winforms-with-nlog), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Debugging/Logging/NLogUtility))
 
 ## Testing 
 
