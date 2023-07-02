@@ -8,16 +8,12 @@ namespace MultipleNLogTargets
     public partial class Form1 : Form
     {
         private readonly Logger logger;
-        private readonly RestClient client;
-        private readonly string customerNumber;
 
         public Form1()
         {
             InitializeComponent();
 
             logger = LogManager.GetLogger("");
-            client = new RestClient("http://localhost:5112");
-            customerNumber = "1234";
         }
 
         private void btnLogTrace_Click(object sender, EventArgs e)

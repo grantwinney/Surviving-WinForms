@@ -3,6 +3,7 @@ using NLog;
 using LogLevel = NLog.LogLevel;
 
 var builder = WebApplication.CreateBuilder(args);
+var logger = LogManager.GetCurrentClassLogger();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -26,14 +27,13 @@ if (app.Environment.IsDevelopment())
 //    var bodyStr = reader.ReadToEndAsync();
 //});
 
-app.MapPost("/log", (HttpRequest request) =>
+app.MapPost("/log", async (HttpRequest request) =>
 {
-    var logger = LogManager.GetCurrentClassLogger();
+    var payload = await request.ReadFromJsonAsync<AppLog>();
 
-    var payloadTask = request.ReadFromJsonAsync<AppLog>();
-    var payload = payloadTask.Result;
+    var logMsg = $"{payload.Event.UTC}|{payload.Host}|{payload.Event.Level}||({payload.Event.Thread}) {payload.Event.Message}";
 
-    logger.Log(LogLevel.FromString(payload.Event.Level), payload);
+    logger.Log(LogLevel.FromString(payload.Event.Level), logMsg);
 });
 
 app.Run();
