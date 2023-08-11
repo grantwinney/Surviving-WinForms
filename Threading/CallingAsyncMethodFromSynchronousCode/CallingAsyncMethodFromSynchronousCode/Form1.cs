@@ -51,7 +51,6 @@ namespace CallingAsyncMethodFromSynchronousCode
 
         private int GetRandomNumberThreadSafe()
         {
-            // All this effort and then I just update the labels from a different thread anyway. :D
             // https://learn.microsoft.com/en-us/dotnet/api/system.random?view=net-7.0#the-systemrandom-class-and-thread-safety
             lock (randLock)
                 return rand.Next(500, 3000);
@@ -66,6 +65,7 @@ namespace CallingAsyncMethodFromSynchronousCode
             ClearLabels();
             pnlButtons.Enabled = false;
 
+            // https://learn.microsoft.com/en-us/dotnet/api/system.progress-1
             var progress = new Progress<int>(thread =>
                 Controls.Cast<Control>().Single(x => x.Name == $"lblThread{thread}").Text = "Done!");
 
