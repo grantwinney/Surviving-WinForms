@@ -34,6 +34,10 @@ So to all my fellow devs that find themselves supporting the old coldness, let's
 * Logging errors in WinForms using NLog ([blog post](https://grantwinney.com/log-errors-in-winforms-with-nlog), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Debugging/Logging/NLogUtility)) (part 1)
 * How to log messages to multiple targets with NLog ([blog post](https://grantwinney.com/how-to-log-messages-to-multiple-targets-with-nlog), [source code](https://github.com/grantwinney/Surviving-WinForms/tree/master/Debugging/Logging/MultipleNLogTargets)) (part 2)
 
+## Presentation
+
+* Alternative ways to send notifications besides using a MessageBox ([blog post](https://grantwinney.com/other-ways-to-notify-user-besides-messagebox), [source code](https://github.com/grantwinney/Surviving-WinForms/tree/master/Presentation/Native/AlternativesToMessageBox))
+
 ## Testing 
 
 * Mocking the MessageBox ([blog post](https://grantwinney.com/mocking-messagebox-in-winforms/), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Testing/MockingMessageBox))
