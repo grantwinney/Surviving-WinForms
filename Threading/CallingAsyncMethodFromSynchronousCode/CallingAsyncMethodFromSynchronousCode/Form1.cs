@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -8,145 +6,107 @@ namespace CallingAsyncMethodFromSynchronousCode
 {
     public partial class Form1 : Form
     {
-        static readonly object randLock = new object();
-        static readonly Random rand = new Random();
-
+        private readonly Progress<int> progress;
+      
         public Form1()
         {
             InitializeComponent();
-            ClearLabels();
+
+            ResetUI();
+            progress = new Progress<int>(step =>
+            {
+                toolStripProgressBar1.Value = step;
+                lblStatus.Text = $"{step}/3 complete...";
+            });
         }
 
-        private void ClearLabels() => lblThread1.Text = lblThread2.Text = lblThread3.Text = lblReturnValue.Text = "";
-
-        private async Task MyShinyNewAsyncMethod(IProgress<int> progress)
+        private void ResetUI()
         {
-            await Task.WhenAll(
-                CallSomeOtherAsyncMethod(progress),
-                AndYetAnotherAsyncMethod(progress),
-                WhyNotOneMoreAsyncMethod(progress)
-            );
+            toolStripProgressBar1.Value = 0;
+            lblStatus.Text = lblReturnValue.Text = "";
         }
 
-        private async Task CallSomeOtherAsyncMethod(IProgress<int> progress)
+
+        // Example 1 - Let's cause a deadlock
+        private void btnExample1_Click(object sender, EventArgs e)
         {
-            await Task.Run(() => Thread.Sleep(GetRandomNumberThreadSafe()));
+            ResetUI();
+          
+            // As soon as we call .Result or .Wait() here, all is lost...
+            var result = ImportantStuffAsync(new Progress<int>()).Result;
 
-            progress.Report(1);
-        }
-
-        private async Task AndYetAnotherAsyncMethod(IProgress<int> progress)
-        {
-            await Task.Run(() => Thread.Sleep(GetRandomNumberThreadSafe()));
-
-            progress.Report(2);
-        }
-
-        private async Task WhyNotOneMoreAsyncMethod(IProgress<int> progress)
-        {
-            await Task.Run(() => Thread.Sleep(GetRandomNumberThreadSafe()));
-
-            progress.Report(3);
-        }
-
-        private int GetRandomNumberThreadSafe()
-        {
-            // https://learn.microsoft.com/en-us/dotnet/api/system.random?view=net-7.0#the-systemrandom-class-and-thread-safety
-            lock (randLock)
-                return rand.Next(500, 3000);
+            // ... the UI thread is deadlocked, so just restart the app. :(
         }
 
 
-
-        // Example 1 - Calling async method from another async method.. async turtles all the way down
-
-        private async void btnExample1_Click(object sender, EventArgs e)
-        {
-            ClearLabels();
-            pnlButtons.Enabled = false;
-
-            // https://learn.microsoft.com/en-us/dotnet/api/system.progress-1
-            var progress = new Progress<int>(thread =>
-                Controls.Cast<Control>().Single(x => x.Name == $"lblThread{thread}").Text = "Done!");
-
-            await MyShinyNewAsyncMethod(progress);
-
-            pnlButtons.Enabled = true;
-        }
-
-
-
-        // Example 2 - Calling async method from a sync method.. the code gods frown upon thee
-
+        // Example 2 - Call async method from a sync method, without bothering to wait
         private void btnExample2_Click(object sender, EventArgs e)
         {
-            ClearLabels();
+            ResetUI();
             pnlButtons.Enabled = false;
-          
-            MySynchronousHillToDieOn_NoWaiting();
 
-            pnlButtons.Enabled = true;  // OOPS! The panel will be enabled before the thread completes
-        }
+            Task.Run(() => ImportantStuffAsync(progress));
 
-        private void MySynchronousHillToDieOn_NoWaiting()
-        {
-            var progress = new Progress<int>(thread =>
-                Controls.Cast<Control>().Single(x => x.Name == $"lblThread{thread}").Text = "Done!");
-
-            Task.Run(async () => await MyShinyNewAsyncMethod(progress));
+            // OOPS! The panel will be re-enabled before the thread completes
+            pnlButtons.Enabled = true;
         }
 
 
-
-        // Example 3 - Calling async method from another sync method.. the code gods have a good cry
-
+        // Example 3 - Call async method from a sync method, but wait until it completes (freezes UI)
         private void btnExample3_Click(object sender, EventArgs e)
         {
-            ClearLabels();
+            ResetUI();
             pnlButtons.Enabled = false;
 
-            MySynchronousHillToDieOn_Wait();
+            Task.Run(() => ImportantStuffAsync(progress)).Wait();
 
             pnlButtons.Enabled = true;
         }
 
 
-        private void MySynchronousHillToDieOn_Wait()
-        {
-            var progress = new Progress<int>(thread =>
-                Controls.Cast<Control>().Single(x => x.Name == $"lblThread{thread}").Text = "Done!");
-
-            var t = Task.Run(async () => await MyShinyNewAsyncMethod(progress));
-            t.Wait();
-        }
-
-
-
-        // Example 4 - Calling async method from another sync method and waiting for return value.. the code gods give up and admit you gotta do what you gotta do
+        // Example 4 - Call async method from a sync method, but wait for return value
         private void btnExample4_Click(object sender, EventArgs e)
         {
-            ClearLabels();
+            ResetUI();
             pnlButtons.Enabled = false;
 
-            MySynchronousHillToDieOn_WaitForReturnValue();
+            var result = Task.Run(() => ImportantStuffAsync(progress)).Result;
+            lblReturnValue.Text = result;
 
             pnlButtons.Enabled = true;
         }
 
-        private void MySynchronousHillToDieOn_WaitForReturnValue()
+
+        // Example 5 - Call async method from another async method.. the right way
+        private async void btnExample5_Click(object sender, EventArgs e)
         {
-            var progress = new Progress<int>(thread =>
-                Controls.Cast<Control>().Single(x => x.Name == $"lblThread{thread}").Text = "Done!");
+            ResetUI();
+            pnlButtons.Enabled = false;
 
-            var t = Task.Run(async () => await MyShinyNewAsyncMethodThatReturnsAValue(progress));
+            var result = await ImportantStuffAsync(progress);
 
-            lblReturnValue.Text = t.Result.ToString();
+            lblReturnValue.Text = result;
+            pnlButtons.Enabled = true;
         }
 
-        private async Task<DateTime> MyShinyNewAsyncMethodThatReturnsAValue(IProgress<int> progress)
+
+        /// <summary>
+        /// An async method that does some REALLY important stuff
+        /// </summary>
+        /// <param name="progress">An IProgress, for reporting progress back to the calling thread</param>
+        /// <returns>The final status</returns>
+        public async Task<string> ImportantStuffAsync(IProgress<int> progress)
         {
-            await MyShinyNewAsyncMethod(progress);
-            return DateTime.Now;
+            await Task.Delay(1000);
+            progress.Report(1);
+
+            await Task.Delay(1000);
+            progress.Report(2);
+
+            await Task.Delay(1000);
+            progress.Report(3);
+
+            return $"Done! ({DateTime.Now:G})";
         }
     }
 }
