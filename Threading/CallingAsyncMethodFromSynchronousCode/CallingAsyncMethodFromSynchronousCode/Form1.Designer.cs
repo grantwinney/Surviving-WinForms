@@ -120,10 +120,9 @@
             // 
             // lblReturnValue
             // 
-            this.lblReturnValue.AutoSize = true;
             this.lblReturnValue.Location = new System.Drawing.Point(419, 143);
             this.lblReturnValue.Name = "lblReturnValue";
-            this.lblReturnValue.Size = new System.Drawing.Size(76, 13);
+            this.lblReturnValue.Size = new System.Drawing.Size(220, 52);
             this.lblReturnValue.TabIndex = 12;
             this.lblReturnValue.Tag = "";
             this.lblReturnValue.Text = "lblReturnValue";

@@ -47,7 +47,7 @@ namespace CallingAsyncMethodFromSynchronousCode
 
             Task.Run(() => ImportantStuffAsync(progress));
 
-            // OOPS! The panel will be re-enabled before the thread completes
+            // OOPS! The panel will be re-enabled before the Task completes
             pnlButtons.Enabled = true;
         }
 
@@ -71,7 +71,7 @@ namespace CallingAsyncMethodFromSynchronousCode
             pnlButtons.Enabled = false;
 
             var result = Task.Run(() => ImportantStuffAsync(progress)).Result;
-            lblReturnValue.Text = result;
+            lblReturnValue.Text = $"{result} Control continues on Thread {Environment.CurrentManagedThreadId}.";
 
             pnlButtons.Enabled = true;
         }
@@ -85,7 +85,7 @@ namespace CallingAsyncMethodFromSynchronousCode
 
             var result = await ImportantStuffAsync(progress);
 
-            lblReturnValue.Text = result;
+            lblReturnValue.Text = $"{result} Control continues on Thread {Environment.CurrentManagedThreadId}.";
             pnlButtons.Enabled = true;
         }
 
@@ -106,7 +106,7 @@ namespace CallingAsyncMethodFromSynchronousCode
             await Task.Delay(1000);
             progress.Report(3);
 
-            return $"Done! ({DateTime.Now:G})";
+            return $"({DateTime.Now:G}) Task done running on Thread {Environment.CurrentManagedThreadId}.";
         }
     }
 }
