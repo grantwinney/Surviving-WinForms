@@ -49,6 +49,10 @@ So to all my fellow devs that find themselves supporting the old coldness, let's
 * Turning a BackgroundWorker into a Task with TaskCompletionSource ([blog post](https://grantwinney.com/turning-a-backgroundworker-into-a-task-with-taskcompletionsource), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Threading/TaskCompletion))
 * Using Async, Await, and Task to keep the WinForms UI responsive ([blog post](https://grantwinney.com/using-async-await-and-task-to-keep-the-winforms-ui-more-responsive), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Threading/AsyncAwait))
 
+## Time
+
+* Using TimeProvider and FakeTimeProvider in WinForms ([blog post](https://grantwinney.com/using-timeprovider-and-faketimeprovider-in-winforms), [source code](https://github.com/grantwinney/SurvivingWinForms/tree/master/Time/TimeAbstraction))
+
 ## Web
 
 CEFSharp
