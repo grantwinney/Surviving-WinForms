@@ -13,6 +13,8 @@ The apps work, representing thousands of hours of effort and business rules, fin
 
 So to all my fellow devs that find themselves supporting the old coldness, let's make the best of it...
 
+_(p.s. I have other repos for [C# / .NET code](https://github.com/grantwinney/CSharpDotNetExamples) and [misc topics](https://github.com/grantwinney/BlogCodeSamples), and some shorter snippets hosted on [Gist](https://gist.github.com/grantwinney) and [JsFiddle](https://jsfiddle.net/user/grantwinney/fiddles/).)_
+
 ## Avoiding Anti-Patterns
 
 * Using nameof to avoid magic strings ([blog post](https://grantwinney.com/using-nameof-to-avoid-magic-strings), [source code](https://github.com/grantwinney/Surviving-WinForms/tree/master/AntiPatterns/MagicStrings/NameOfVersusMagicStrings))
