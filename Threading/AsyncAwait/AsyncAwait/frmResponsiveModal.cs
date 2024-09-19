@@ -68,7 +68,7 @@ namespace AsyncAwait
             };
 
             var bmt = new BreakfastMultipleThreads(progress);
-            await Task.Run(() => bmt.MakeBreakfastAsync());
+            await bmt.MakeBreakfastAsync();
 
             btnMultipleThreads.Enabled = true;
             prgMultipleThreads.Hide();
@@ -90,7 +90,7 @@ namespace AsyncAwait
             };
 
             var bhr = new BreakfastHeavilyDigested(progress);
-            await Task.Run(() => bhr.MakeBreakfastAsync());
+            await bhr.MakeBreakfastAsync();
 
             btnMultipleThreadsHeavy.Enabled = true;
             prgMultipleThreadsHeavy.Hide();
