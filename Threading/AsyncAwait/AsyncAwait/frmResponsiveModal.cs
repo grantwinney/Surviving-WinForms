@@ -61,7 +61,7 @@ namespace AsyncAwait
             prgMultipleThreads.Show();
 
             var progress = new Progress<string>();
-            progress.ProgressChanged += (s, message) =>
+            progress.ProgressChanged += (_, message) =>
             {
                 if (!txtMultipleThreads.IsDisposed)
                     txtMultipleThreads.AppendText(message + Environment.NewLine);
@@ -83,7 +83,7 @@ namespace AsyncAwait
             prgMultipleThreadsHeavy.Show();
 
             var progress = new Progress<string>();
-            progress.ProgressChanged += (s, message) =>
+            progress.ProgressChanged += (_, message) =>
             {
                 if (!txtMultipleThreadsHeavy.IsDisposed)
                     txtMultipleThreadsHeavy.AppendText(message + Environment.NewLine);
