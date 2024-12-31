@@ -17,6 +17,10 @@ _(p.s. I have other repos for [C# / .NET code](https://github.com/grantwinney/CS
 
 ## .NET Additions
 
+### .NET 5
+
+- TaskDialog, a new message box for WinForms ([blog post](https://grantwinney.com/using-taskdialog-in-winforms), [source code](https://github.com/grantwinney/Surviving-WinForms/tree/master/.NET%2005/TaskDialogSample))
+
 ### .NET 8
 
 - GetStockIcon to get Windows icons ([blog post](https://grantwinney.com/how-to-use-getstockicon-for-winforms), [source code](https://github.com/grantwinney/Surviving-WinForms/tree/master/.NET%2008/GetStockIcon))
