@@ -20,6 +20,7 @@ _(p.s. I have other repos for [C# / .NET code](https://github.com/grantwinney/CS
 ### .NET 5
 
 - TaskDialog, a new message box for WinForms ([blog post](https://grantwinney.com/using-taskdialog-in-winforms), [source code](https://github.com/grantwinney/Surviving-WinForms/tree/master/.NET%2005/TaskDialogSample))
+- WebView2, an Edge/Chromium based browser ([blog post](https://grantwinney.com/webview2-a-browser-for-winforms), [source code](https://github.com/grantwinney/Surviving-WinForms/tree/master/.NET%2005/WebView2Sample))
 
 ### .NET 8
 
