@@ -6,31 +6,34 @@ namespace MVPExample.Presenters
 {
     public class CalcPresenter
     {
-        readonly ICalcView view;
-        readonly ICalcModel model;
+        readonly ICalcView calcView;
+        readonly ICalcModel calcModel;
 
         public CalcPresenter(ICalcView view, ICalcModel model)
         {
-            this.view = view;
-            this.model = model;
-            this.view.Add += Add;
-            this.view.Reset += Reset;
-            this.view.Show();
+            calcView = view;
+            calcModel = model;
+
+            calcView.Add += (s, e) => Add();
+            calcView.Reset += (s, e) => Reset();
+
+            calcView.Show();
         }
 
-        public void Add(object sender, EventArgs e)
+        public void Add()
         {
-            model.CalculateTotal(new List<string> { view.Value1, view.Value2, view.Value3 }.ConvertAll(TryGetNumber));
+            calcModel.CalculateTotal(new List<string> { calcView.Value1, calcView.Value2, calcView.Value3 }.ConvertAll(TryGetNumber));
 
-            view.Total = Convert.ToString(model.Total);
-            view.RunningTotal = Convert.ToString(model.RunningTotal);
+            calcView.Total = Convert.ToString(calcModel.Total);
+            calcView.RunningTotal = Convert.ToString(calcModel.RunningTotal);
         }
 
-        public void Reset(object sender, EventArgs e)
+        public void Reset()
         {
-            model.ResetTotal();
+            calcModel.ResetTotal();
 
-            view.Value1 = view.Value2 = view.Value3 = view.Total = view.RunningTotal = "";
+            calcView.Value1 = calcView.Value2 = calcView.Value3 = calcView.Total = calcView.RunningTotal = "";
+            calcView.SetFocusOnFirstTextBox();
         }
 
         public decimal TryGetNumber(string input)

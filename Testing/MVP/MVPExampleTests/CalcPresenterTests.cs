@@ -30,7 +30,7 @@ namespace MVP.Calculator
             mockModel.SetupGet(x => x.Total).Returns(60m);
             mockModel.SetupGet(x => x.RunningTotal).Returns(100m);
 
-            presenter.Add(null, null);
+            presenter.Add();
 
             mockModel.Verify(x => x.CalculateTotal(It.IsAny<List<decimal>>()), Times.Once);
             mockView.VerifySet(x => x.Total = "60", Times.Once);
@@ -40,7 +40,7 @@ namespace MVP.Calculator
         [Test]
         public void ResetTest()
         {
-            presenter.Reset(null, null);
+            presenter.Reset();
 
             mockView.VerifySet(x => x.Value1 = "", Times.Once);
             mockView.VerifySet(x => x.Value2 = "", Times.Once);

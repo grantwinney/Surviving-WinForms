@@ -11,6 +11,7 @@ namespace MVPExample.Interfaces
         string Value3 { get; set; }
         string Total { set; }
         string RunningTotal { set; }
+        void SetFocusOnFirstTextBox();
         void Show();
     }
 }

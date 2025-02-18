@@ -6,8 +6,8 @@ namespace MVPExample.Models
 {
     public class CalcModel : ICalcModel
     {
-        public decimal Total { get; private set; }
-        public decimal RunningTotal { get; private set; }
+        public decimal Total { get; set; }
+        public decimal RunningTotal { get; set; }
 
         public void CalculateTotal(List<decimal> numbers)
         {

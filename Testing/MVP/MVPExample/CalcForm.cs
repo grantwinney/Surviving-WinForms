@@ -13,12 +13,8 @@ namespace MVPExample
         {
             InitializeComponent();
 
-            btnAdd.Click += delegate { Add?.Invoke(this, EventArgs.Empty); };
-            btnReset.Click += delegate
-            {
-                Reset?.Invoke(this, EventArgs.Empty);
-                txtNumber1.Focus();
-            };
+            btnAdd.Click += (s, e) => Add.Invoke(s, e);
+            btnReset.Click += (s, e) => Reset.Invoke(s, e);
         }
 
         string ICalcView.Value1
@@ -44,6 +40,11 @@ namespace MVPExample
         public string RunningTotal
         {
             set => txtRunningTotal.Text = value;
+        }
+
+        public void SetFocusOnFirstTextBox()
+        {
+            txtNumber1.Focus();
         }
     }
 }
